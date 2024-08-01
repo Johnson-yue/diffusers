@@ -208,7 +208,7 @@ class IPAdapterMixin:
                             pretrained_model_name_or_path_or_dict,
                             subfolder=image_encoder_subfolder,
                             low_cpu_mem_usage=low_cpu_mem_usage,
-                        ).to(self.device, dtype=self.dtype)
+                        ).to(self._execution_device, dtype=self.dtype)
                         self.register_modules(image_encoder=image_encoder)
                     else:
                         raise ValueError(
